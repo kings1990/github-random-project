@@ -1,0 +1,72 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin require-restart="true">
+    <id>com.github.kings1990.githubRandomProject</id>
+    <name>GitHub Random Project</name>
+    <vendor email="darkings1990@gmail.com" url="https://www.github.com/kings1990">Kings1990</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends optional="true">com.intellij.java</depends>
+    <depends optional="true">com.intellij.modules.androidstudio</depends>
+    <depends optional="true">com.intellij.modules.python</depends>
+    <depends optional="true">com.intellij.clion</depends>
+    <depends optional="true">com.intellij.database</depends>
+    <depends optional="true">org.jetbrains.plugins.go</depends>
+    <depends optional="true">com.intellij.modules.rider</depends>
+    <depends optional="true">com.intellij.modules.ruby</depends>
+    <depends optional="true">com.jetbrains.php</depends>
+    <depends optional="true">JavaScript</depends>
+    <depends optional="true">com.intellij.modules.cidr.lang</depends>
+
+
+    <resource-bundle>messages.githubRandomProject</resource-bundle>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="io.github.kings1990.githubRandomProject.config.GithubProjectComponent"/>
+        <applicationService serviceImplementation="io.github.kings1990.githubRandomProject.config.SavedProjectComponent"/>
+        <applicationService serviceImplementation="io.github.kings1990.githubRandomProject.config.RecentProjectComponent"/>
+        <applicationService serviceImplementation="io.github.kings1990.githubRandomProject.config.SearchConditionComponent"/>
+        <applicationService serviceImplementation="io.github.kings1990.githubRandomProject.processor.GithubRepoFetchProcessor"/>
+        
+
+        <notificationGroup id="githubProject" displayType="BALLOON"/>
+        <postStartupActivity id="githubProjectPostStartupActivity"
+                             implementation="io.github.kings1990.githubRandomProject.update.WhatsNewActivity"/>
+
+        <postStartupActivity id="githubProjectSystemNoticeActivity"
+                             implementation="io.github.kings1990.githubRandomProject.update.SystemNoticeActivity"/>
+
+        <toolWindow id="GitHub Random Project" anchor="right" icon="PluginIcons.githubProject"
+                    factoryClass="io.github.kings1990.githubRandomProject.view.MyToolWindowFactory"
+                    secondary="false"/>
+    </extensions>
+
+    <applicationListeners>
+        <listener class="io.github.kings1990.githubRandomProject.idea.TitleBarActionRegistrar"
+                  topic="com.intellij.ide.AppLifecycleListener"/>
+        <listener class="io.github.kings1990.githubRandomProject.idea.TitleBarActionRegistrar"
+                  topic="com.intellij.ide.plugins.DynamicPluginListener"/>
+    </applicationListeners>
+
+    <actions resource-bundle="messages.githubRandomProject">
+
+        <action id="githubProject.GithubProjectRandomAction" class="io.github.kings1990.githubRandomProject.action.GithubProjectRandomAction" text="iBlog"
+                description="githubProject" icon="PluginIcons.githubProject">
+            <add-to-group group-id="NavBarToolBar" relative-to-action="SearchEverywhere" anchor="before"/>
+        </action>
+
+        
+        <action id="githubProject.AddDirectoryAction" class="io.github.kings1990.githubRandomProject.action.AddDirectoryAction"
+                icon="PluginIcons.newFolder"/>
+        <action id="githubProject.RemoveDirectoryAction" class="io.github.kings1990.githubRandomProject.action.RemoveDirectoryAction"
+                icon="PluginIcons.delete"/>
+        <action id="githubProject.ExpandAllAction" class="io.github.kings1990.githubRandomProject.action.ExpandAllAction"
+                icon="PluginIcons.expandAll"/>
+        <action id="githubProject.CollapseAllAction" class="io.github.kings1990.githubRandomProject.action.CollapseAllAction"
+                icon="PluginIcons.collapseAll"/>
+        <action id="githubProject.WechatAction" class="io.github.kings1990.githubRandomProject.action.WechatAction"
+                icon="PluginIcons.wechat"/>
+        <action id="githubProject.OpenInGithubProjectToolWindowAction" class="io.github.kings1990.githubRandomProject.action.OpenInGithubProjectToolWindowAction"/>
+        
+
+    </actions>
+</idea-plugin>

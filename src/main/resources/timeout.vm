@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .timeout-container {
+            padding: 80px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .timeout-icon {
+            font-size: 48px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .timeout-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .timeout-message {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .timeout-link {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .timeout-header {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        .timeout-link:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+<div class="timeout-container">
+    <div class="timeout-icon">
+        <i class="fas fa-clock"></i>
+    </div>
+    <h2 class="timeout-title">访问超时</h2>
+    <p class="timeout-message">请点击下方链接打开</p>
+
+    <h3 class="timeout-header">${title}</h3>
+    <a href="${link}" class="timeout-link">打开</a>
+</div>
+
+
+</body>
+</html>

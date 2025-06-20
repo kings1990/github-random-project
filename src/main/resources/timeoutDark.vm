@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout Page</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1c1c1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #f0f0f0;
+        }
+
+        .timeout-container {
+            background-color: #2c2c2e;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 6600px;
+            width: 90%;
+        }
+
+        .timeout-icon {
+            font-size: 48px;
+            color: #ff3b30;
+            margin-bottom: 20px;
+        }
+
+        .timeout-title {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .timeout-message {
+            font-size: 16px;
+            color: #a0a0a0;
+            margin-bottom: 30px;
+        }
+
+        .timeout-header {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        .timeout-link {
+            display: inline-block;
+            background-color: #ff3b30;
+            color: #f0f0f0;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .timeout-link:hover {
+            background-color: #c0392b;
+        }
+
+        .timeout-header {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+    </style>
+</head>
+<body>
+<div class="timeout-container">
+    <div class="timeout-icon">
+        <i class="fas fa-clock"></i>
+    </div>
+    <h2 class="timeout-title">访问超时</h2>
+    <p class="timeout-message">请点击下方链接打开</p>
+
+    <h3 class="timeout-header">${title}</h3>
+    <a href="${link}" class="timeout-link">打开</a>
+</div>
+
+
+</body>
+</html>
