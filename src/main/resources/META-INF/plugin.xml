@@ -49,7 +49,7 @@
 
     <actions resource-bundle="messages.githubRandomProject">
 
-        <action id="githubProject.GithubProjectRandomAction" class="io.github.kings1990.githubRandomProject.action.GithubProjectRandomAction" text="iBlog"
+        <action id="githubProject.GithubProjectRandomAction" class="io.github.kings1990.githubRandomProject.action.GithubProjectRandomAction" text="Random a Project"
                 description="githubProject" icon="PluginIcons.githubProject">
             <add-to-group group-id="NavBarToolBar" relative-to-action="SearchEverywhere" anchor="before"/>
         </action>
