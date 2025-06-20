@@ -11,7 +11,7 @@ import cn.hutool.json.JSONUtil;
 public class LastVersionUtil {
 
     //todo kings
-    private static final String URL = "https://plugins.jetbrains.com/api/plugins/24920/updates?size=10&channel=&page=1";
+    private static final String URL = "https://plugins.jetbrains.com/api/plugins/27698/updates?size=10&channel=&page=1";
 
     public static String getOnlineLastVersion() {
         try {
