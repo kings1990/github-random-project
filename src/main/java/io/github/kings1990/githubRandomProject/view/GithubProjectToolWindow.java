@@ -1,7 +1,6 @@
 package io.github.kings1990.githubRandomProject.view;
 
 import com.google.common.collect.Lists;
-import com.intellij.ide.plugins.newui.ListPluginComponent;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -146,7 +145,8 @@ public class GithubProjectToolWindow extends SimpleToolWindowPanel implements Di
         searchTextField = new SearchTextField(true);
         JBTextField searchTextFieldTextEditor = searchTextField.getTextEditor();
         StatusText emptyText = searchTextFieldTextEditor.getEmptyText();
-        emptyText.appendText(MyResourceBundleUtil.getKey("TypeKeywordsToSearch"), new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, ListPluginComponent.GRAY_COLOR));
+        JBColor grayColor = JBColor.namedColor("Label.infoForeground", new JBColor(Gray._120, Gray._135));
+        emptyText.appendText(MyResourceBundleUtil.getKey("TypeKeywordsToSearch"), new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, grayColor));
 
         searchTextFieldTextEditor.getDocument().addDocumentListener(new DelayedDocumentListener());
 

@@ -4,7 +4,6 @@ import com.intellij.ide.AppLifecycleListener;
 import com.intellij.ide.plugins.DynamicPluginListener;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.actionSystem.impl.ActionManagerImpl;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.registry.Registry;
@@ -51,16 +50,14 @@ public class TitleBarActionRegistrar implements AppLifecycleListener, DynamicPlu
                 constraints = Constraints.LAST;
                 groupId = "ExperimentalToolbarActions";
             }
-
-            ActionManagerImpl actionManager = (ActionManagerImpl) ActionManager.getInstance();
-            AnAction action = actionManager.getAction("githubProject.GithubProjectRandomAction");
+            
+            AnAction action = ActionManager.getInstance().getAction("githubProject.GithubProjectRandomAction");
             assert action != null;
             DefaultActionGroup group = (DefaultActionGroup) ActionManager.getInstance().getAction(groupId);
 
             List<AnAction> actionList = Arrays.asList(group.getChildActionsOrStubs());
-
             if (!actionList.contains(action)) {
-                actionManager.addToGroup(group, action, constraints);
+                group.add(action, constraints);
             }
             new GotItTooltip("GithubProjectRandomAction", MyResourceBundleUtil.getKey("FetchProject"), null)
                     .assignTo(ActionManager.getInstance().getAction("githubProject.GithubProjectRandomAction").getTemplatePresentation(), GotItTooltip.BOTTOM_MIDDLE);
