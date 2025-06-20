@@ -13,8 +13,7 @@ When you're taking a break from coding but still want to stay inspired, plugin h
 🛠️ Productivity boosters like PowerToys or AutoGPT
 
 ## Links
-
-[Report issues](https://github.com/kings1990/github-random-project/issues)
+[Source Code](https://github.com/kings1990/github-random-project) | [Report issues](https://github.com/kings1990/github-random-project/issues)
 
 
 
