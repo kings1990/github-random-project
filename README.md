@@ -1,4 +1,4 @@
-# iBlog
+# GitHub Random Project
 
 <!-- Plugin description -->
 
